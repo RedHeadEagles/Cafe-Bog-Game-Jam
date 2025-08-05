@@ -8,3 +8,5 @@
   <li>phase 2: jammin - we make the thing!!</li>
   <li>try to work in a way that shares as much knowledge to the rest of the team as possible! the jam is about learning, and many of our team are inexperienced!!</li>
 </ul>
+
+<p>PHASE 1 CLEAR!! we are going with a metroidvania style game where you fight bosses!</p>
