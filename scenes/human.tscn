@@ -26,4 +26,5 @@ texture = SubResource("GradientTexture2D_f3sb7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+drag_vertical_enabled = true
 drag_horizontal_offset = 0.6

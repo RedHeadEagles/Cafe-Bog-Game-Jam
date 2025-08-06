@@ -13,6 +13,38 @@ size = Vector2(314, 28)
 position = Vector2(104, -42)
 collision_mask = 2
 
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(734, -143)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_rwgxs")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform3"]
+offset_right = 314.0
+offset_bottom = 27.0
+color = Color(0.219608, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(157, 13)
+shape = SubResource("RectangleShape2D_4wyf3")
+debug_color = Color(0.115006, 0.591448, 0.7233, 0.42)
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(323, -54)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_rwgxs")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform2"]
+offset_right = 314.0
+offset_bottom = 27.0
+color = Color(0.219608, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(157, 13)
+shape = SubResource("RectangleShape2D_4wyf3")
+debug_color = Color(0.115006, 0.591448, 0.7233, 0.42)
+
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(-45, 35)
 collision_layer = 2

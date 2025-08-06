@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 # how fast the player is
-@export var move_speed = 1000
-@export var jump_speed = 25000
+@export var move_speed = 1100
+@export var jump_speed = 3000
 
 func _ready() -> void:
 	pass
@@ -25,7 +25,15 @@ func user_input() -> void:
 		velocity.y -= jump_speed
 
 func _physics_process(delta: float) -> void:
-	velocity = Vector2.ZERO
-	user_input()
-	velocity += get_gravity()
+	velocity.x = 0
+	
+	user_input() # get velocity vector from user input
+	
+	# fall slower, better jumps?
+	if velocity.y > 0:
+		velocity += get_gravity()
+	else:
+		velocity += get_gravity() / 4
+	
+	# takes velocity and puts it into positon with collision detection
 	move_and_slide()
