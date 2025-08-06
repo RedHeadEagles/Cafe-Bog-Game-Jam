@@ -25,3 +25,5 @@ debug_color = Color(0, 0.594737, 0.729336, 0.42)
 texture = SubResource("GradientTexture2D_f3sb7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_horizontal_offset = 0.6
