@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cexa16qkbu46r"]
+[gd_scene load_steps=4 format=3 uid="uid://cexa16qkbu46r"]
 
 [ext_resource type="PackedScene" uid="uid://31ggpxte7msq" path="res://scenes/human.tscn" id="1_nnsk1"]
-[ext_resource type="Script" uid="uid://cxqmt4wij70d0" path="res://scripts/move.gd" id="2_rwgxs"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rwgxs"]
 
@@ -13,7 +12,6 @@ size = Vector2(314, 28)
 [node name="Human" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(104, -42)
 collision_mask = 2
-script = ExtResource("2_rwgxs")
 
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(-45, 35)
