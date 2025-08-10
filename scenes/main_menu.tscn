@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlv6phej8kbwq"]
+
+[ext_resource type="Script" uid="uid://bsyrt1uwu6loc" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Button Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.6
+anchor_bottom = 1.0
+offset_left = -198.144
+offset_right = 200.448
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="Button Menu"]
+layout_mode = 2
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Credits")
+text = "Play"
+
+[node name="Settings" type="Button" parent="Button Menu"]
+layout_mode = 2
+focus_next = NodePath("../Credits")
+focus_previous = NodePath("../Play")
+text = "Settings
+"
+
+[node name="Credits" type="Button" parent="Button Menu"]
+layout_mode = 2
+focus_next = NodePath("../Play")
+focus_previous = NodePath("../Settings")
+text = "Credits
+"
+
+[node name="Exit" type="Button" parent="Button Menu"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="Button Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button Menu/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Button Menu/Exit" to="." method="_on_exit_pressed"]

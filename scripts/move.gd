@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # how fast the player is
 @export var move_speed = 1100
-@export var jump_speed = 3000
+@export var jump_speed = 2500
 
 func _ready() -> void:
 	pass
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	
 	# fall slower, better jumps?
 	if velocity.y > 0:
-		velocity += get_gravity()
+		velocity += get_gravity() / 2
 	else:
 		velocity += get_gravity() / 4
 	
