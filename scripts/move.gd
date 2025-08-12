@@ -6,10 +6,19 @@ extends CharacterBody2D
 @export var hasDoubleJump = false
 @export var hasWallJump = false
 @export var wallKickback = 3
+@export var fallLine = 400
 var doubleJumpReady = 2
 
+var start
+
 func _ready() -> void:
-	pass
+	start = position
+	print(position)
+
+func check_outside():
+	if position.y > fallLine:
+		position = start
+		print("brought back to start")
 
 # takes input and inserts it into velocity
 func user_input() -> void:
@@ -51,6 +60,8 @@ func user_input() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	check_outside()
+	
 	velocity.x = 0
 	
 	user_input() # get velocity vector from user input
