@@ -48,7 +48,7 @@ texture_region_size = Vector2i(17, 17)
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.43218, -7.33308, 8.5, -7.33308, 8.5, 8.5, -7.23399, 8.5)
 4:3/0 = 0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
@@ -76,8 +76,11 @@ texture_region_size = Vector2i(17, 17)
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 5:5/0 = 0
 5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.8376, -6.9367, 8.5, -6.9367, 8.5, 8.5, -7.23399, 8.5)
 6:5/0 = 0
@@ -86,14 +89,18 @@ texture_region_size = Vector2i(17, 17)
 0:6/0 = 0
 1:6/0 = 0
 3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.5, -8.5, 8.5, -8.5, 8.5, 8.5, -8.5, 8.5)
 6:6/0 = 0
 7:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_cq4me"]
 tile_size = Vector2i(17, 17)
 physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_8ho6b")
 sources/0 = SubResource("TileSetAtlasSource_4kmhl")
 
@@ -101,8 +108,13 @@ sources/0 = SubResource("TileSetAtlasSource_4kmhl")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-6, -10)
-tile_map_data = PackedByteArray("AAD8/wAAAAADAAMAAAD9/wAAAAADAAMAAAD+/wAAAAADAAMAAAD//wAAAAADAAMAAAAAAAAAAAADAAMAAAABAAAAAAADAAMAAAACAAAAAAADAAMAAAADAAAAAAADAAMAAAAEAAAAAAADAAMAAAD8/wEAAAAEAAQAAAD9/wEAAAAEAAQAAAD+/wEAAAAEAAQAAAD//wEAAAAEAAQAAAAAAAEAAAAEAAQAAAABAAEAAAAEAAQAAAACAAEAAAAEAAQAAAADAAEAAAAEAAQAAAAEAAEAAAAEAAQAAAAFAAAAAAADAAMAAAAGAAAAAAADAAMAAAAFAAEAAAAEAAQAAAAGAAEAAAAFAAQAAAD7/wAAAAADAAMAAAD7/wEAAAADAAQAAAD8/wIAAAAEAAUAAAD9/wIAAAAEAAUAAAD+/wIAAAAEAAUAAAD//wIAAAAEAAUAAAAAAAIAAAAEAAUAAAABAAIAAAAEAAUAAAACAAIAAAAEAAUAAAADAAIAAAAEAAUAAAAEAAIAAAAEAAUAAAAFAAIAAAAEAAUAAAD7/wIAAAADAAUAAAAGAAIAAAAFAAUAAAD7////AAADAAMAAAD8////AAAEAAMAAAD9////AAAEAAMAAAD+////AAAEAAMAAAD/////AAAEAAMAAAAAAP//AAAEAAMAAAABAP//AAAEAAMAAAACAP//AAAEAAMAAAADAP//AAAEAAMAAAAEAP//AAAEAAMAAAAFAP//AAAEAAMAAAAGAP//AAAFAAMAAAA=")
+tile_map_data = PackedByteArray("AAD+////AAAEAAMAAAD/////AAAEAAMAAAAAAP//AAAEAAMAAAD9////AAAEAAMAAAABAP//AAAEAAMAAAD8////AAAEAAMAAAACAP//AAAFAAMAAAD7////AAADAAMAAAD8/wAAAAAEAAQAAAD9/wAAAAAEAAQAAAD+/wAAAAAEAAQAAAD//wAAAAAEAAQAAAAAAAAAAAAEAAQAAAABAAAAAAAEAAQAAAD7/wAAAAADAAQAAAACAAAAAAAFAAQAAAA=")
 tile_set = SubResource("TileSet_cq4me")
+use_kinematic_bodies = true
+collision_visibility_mode = 1
 
 [node name="Human" parent="." instance=ExtResource("2_ph3nu")]
 position = Vector2(-20, -76)
+collision_mask = 2
+platform_floor_layers = 4294967042
+platform_wall_layers = 2
