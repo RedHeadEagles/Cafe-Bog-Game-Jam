@@ -48,6 +48,10 @@ down={
 2d_physics/layer_2="platforms"
 2d_physics/layer_3="enemies"
 
+[physics]
+
+2d/default_gravity=1250.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
