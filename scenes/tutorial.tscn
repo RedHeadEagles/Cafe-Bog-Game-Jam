@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://dqa6e2c75ckse"]
+[gd_scene load_steps=7 format=4 uid="uid://dqa6e2c75ckse"]
 
 [ext_resource type="Texture2D" uid="uid://sp5bp0v2opdn" path="res://art/SPRITES Dirt Tile 1.png" id="1_8ho6b"]
 [ext_resource type="PackedScene" uid="uid://31ggpxte7msq" path="res://scenes/human.tscn" id="2_ph3nu"]
+[ext_resource type="PackedScene" uid="uid://bpaptjybheekw" path="res://scenes/bot.tscn" id="3_ph3nu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ho6b"]
 
@@ -111,10 +112,12 @@ position = Vector2(-6, -10)
 tile_map_data = PackedByteArray("AAD+////AAAEAAMAAAD/////AAAEAAMAAAAAAP//AAAEAAMAAAD9////AAAEAAMAAAABAP//AAAEAAMAAAD8////AAAEAAMAAAACAP//AAAFAAMAAAD7////AAADAAMAAAD8/wAAAAAEAAQAAAD9/wAAAAAEAAQAAAD+/wAAAAAEAAQAAAD//wAAAAAEAAQAAAAAAAAAAAAEAAQAAAABAAAAAAAEAAQAAAD7/wAAAAADAAQAAAACAAAAAAAFAAQAAAA=")
 tile_set = SubResource("TileSet_cq4me")
 use_kinematic_bodies = true
-collision_visibility_mode = 1
 
 [node name="Human" parent="." instance=ExtResource("2_ph3nu")]
 position = Vector2(-20, -76)
 collision_mask = 2
 platform_floor_layers = 4294967042
 platform_wall_layers = 2
+
+[node name="Bot" parent="." instance=ExtResource("3_ph3nu")]
+position = Vector2(-20, -131)
