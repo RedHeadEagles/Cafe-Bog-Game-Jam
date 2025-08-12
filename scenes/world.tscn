@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cexa16qkbu46r"]
+[gd_scene load_steps=5 format=3 uid="uid://cexa16qkbu46r"]
 
 [ext_resource type="PackedScene" uid="uid://31ggpxte7msq" path="res://scenes/human.tscn" id="1_nnsk1"]
 
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyf3"]
 size = Vector2(314, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
+size = Vector2(47, 286)
 
 [node name="World" type="Node2D"]
 
@@ -60,3 +63,17 @@ color = Color(0.219608, 1, 1, 1)
 position = Vector2(157, 13)
 shape = SubResource("RectangleShape2D_4wyf3")
 debug_color = Color(0.115006, 0.591448, 0.7233, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 1087.0
+offset_top = -479.0
+offset_right = 1135.0
+offset_bottom = -192.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1110.5, -336)
+shape = SubResource("RectangleShape2D_nnsk1")
