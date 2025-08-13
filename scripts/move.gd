@@ -38,14 +38,14 @@ func user_input() -> void:
 	
 	if hasWallJump:
 		if is_on_wall():
-			doubleJumpReady += 1
+			doubleJumpReady = doubleJumpReady + 1 if doubleJumpReady < 2 else 2
 			if Input.is_action_just_pressed("jump") and (doubleJumpReady > 0):
 				velocity.y = -jump_speed
 				doubleJumpReady -= 1
-			if velocity.x < 0:
-				velocity.x = move_speed * wallKickback
-			else:
-				velocity.x = -(move_speed) * wallKickback
+				if velocity.x < 0:
+					velocity.x = move_speed * wallKickback
+				else:
+					velocity.x = -(move_speed) * wallKickback
 	
 	if hasDoubleJump:
 		if is_on_floor():
