@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlv6phej8kbwq"]
+[gd_scene load_steps=3 format=3 uid="uid://dlv6phej8kbwq"]
 
 [ext_resource type="Script" uid="uid://bsyrt1uwu6loc" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Theme" uid="uid://bkdjc347l63pw" path="res://menu_theme.tres" id="2_ekxnf"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_ekxnf")
 script = ExtResource("1_l6cm7")
 
 [node name="Button Menu" type="VBoxContainer" parent="."]
@@ -21,33 +23,34 @@ offset_left = -198.144
 offset_right = 200.448
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_ekxnf")
 alignment = 1
 
-[node name="Play" type="Button" parent="Button Menu"]
+[node name="New Game" type="Button" parent="Button Menu"]
+layout_mode = 2
+focus_next = NodePath("../Continue")
+focus_previous = NodePath("../Settings")
+text = "New Game"
+
+[node name="Continue" type="Button" parent="Button Menu"]
 layout_mode = 2
 focus_next = NodePath("../Settings")
-focus_previous = NodePath("../Credits")
-text = "Play"
+focus_previous = NodePath("../New Game")
+disabled = true
+text = "Continue"
 
 [node name="Settings" type="Button" parent="Button Menu"]
 layout_mode = 2
-focus_next = NodePath("../Credits")
-focus_previous = NodePath("../Play")
+focus_next = NodePath("../New Game")
+focus_previous = NodePath("../Continue")
 text = "Settings
-"
-
-[node name="Credits" type="Button" parent="Button Menu"]
-layout_mode = 2
-focus_next = NodePath("../Play")
-focus_previous = NodePath("../Settings")
-text = "Credits
 "
 
 [node name="Exit" type="Button" parent="Button Menu"]
 layout_mode = 2
 text = "Exit"
 
-[connection signal="pressed" from="Button Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button Menu/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Button Menu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Button Menu/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Button Menu/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Button Menu/Exit" to="." method="_on_exit_pressed"]

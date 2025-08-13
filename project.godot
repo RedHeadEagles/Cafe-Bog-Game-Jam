@@ -15,6 +15,10 @@ run/main_scene="uid://dlv6phej8kbwq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://art/icon.svg"
 
+[gui]
+
+theme/custom="uid://bkdjc347l63pw"
+
 [input]
 
 left={
@@ -73,3 +77,4 @@ switch={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0.364706, 0.356863, 1)
