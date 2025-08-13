@@ -27,6 +27,7 @@ debug_color = Color(0, 0.594737, 0.729336, 0.42)
 texture = SubResource("GradientTexture2D_f3sb7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
