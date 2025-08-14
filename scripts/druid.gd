@@ -12,7 +12,7 @@ func _vertical_input():
 		if is_on_wall():
 			doubleJumpReady = doubleJumpReady + 1 if doubleJumpReady < 2 else 2
 			if Input.is_action_just_pressed("jump") and (doubleJumpReady > 0):
-				velocity.y = -jump_speed
+				velocity.y = -jump_height
 				doubleJumpReady -= 1
 				if velocity.x < 0:
 					velocity.x = move_speed * wallKickback
@@ -23,11 +23,11 @@ func _vertical_input():
 		if is_on_floor():
 			doubleJumpReady = 2
 		if Input.is_action_just_pressed("jump") and (doubleJumpReady > 0):
-			velocity.y = -jump_speed
+			velocity.y = -sqrt(2 * get_gravity().y * jump_height)
 			doubleJumpReady -= 1
 	else:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = -jump_speed
+			velocity.y = -sqrt(2 * get_gravity().y * jump_height)
 
 
 func _idle_ani():

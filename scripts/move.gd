@@ -8,7 +8,7 @@ signal switch
 
 # how fast the player is
 @export var move_speed := 400
-@export var jump_speed := 600
+@export var jump_height := 150
 
 # world boundaries
 @export var fallLine := 400
@@ -48,7 +48,7 @@ func _horizontal_input() -> void:
 # updates vertical (y) velocity. Default works for basic player movement
 func _vertical_input() -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = -jump_speed
+		velocity.y = -sqrt(2 * get_gravity().y * jump_height)
 
 
 # gets horizontal and vertical inputs for velocity if movement is enabled
