@@ -1,11 +1,11 @@
 [gd_resource type="TileSet" load_steps=4 format=3 uid="uid://2456rc7auelr"]
 
-[ext_resource type="Texture2D" uid="uid://sp5bp0v2opdn" path="res://art/SPRITES Dirt Tile 1.png" id="1_g3vke"]
+[ext_resource type="Texture2D" uid="uid://sp5bp0v2opdn" path="res://art/SPRITES Dirt Tile 1.png" id="1_qp2yk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rwgxs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
-texture = ExtResource("1_g3vke")
+texture = ExtResource("1_qp2yk")
 texture_region_size = Vector2i(17, 17)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

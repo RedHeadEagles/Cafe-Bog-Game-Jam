@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ul027jq2xoxt"]
+
+[ext_resource type="AudioStream" uid="uid://b5xydl2u3qdy5" path="res://sfx/press.mp3" id="1_gbdfy"]
+[ext_resource type="Script" uid="uid://j3s3a7qgv31" path="res://scripts/sound_manager.gd" id="1_s6peo"]
+[ext_resource type="AudioStream" uid="uid://c4ir7sr2m7pdx" path="res://sfx/jump.mp3" id="3_shlr6"]
+
+[node name="Sound Manager" type="Node2D"]
+script = ExtResource("1_s6peo")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gbdfy")
+volume_db = -10.0
+pitch_scale = 1.79
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_shlr6")
+volume_db = -20.0

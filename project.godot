@@ -15,6 +15,10 @@ run/main_scene="uid://dlv6phej8kbwq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://art/icon.svg"
 
+[autoload]
+
+SoundManager="*res://scenes/sound_manager.tscn"
+
 [gui]
 
 theme/custom="uid://bkdjc347l63pw"

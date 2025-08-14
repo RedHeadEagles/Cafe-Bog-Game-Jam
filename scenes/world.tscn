@@ -20,4 +20,3 @@ tile_set = ExtResource("2_4wyf3")
 position = Vector2(102, -21)
 fly = true
 interface = true
-jump_height = 35

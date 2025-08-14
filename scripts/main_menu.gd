@@ -4,13 +4,17 @@ func _ready() -> void:
 	pass
 
 func _on_new_game_pressed() -> void:
+	SoundManager.button_click()
 	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 func _on_continue_pressed() -> void:
+	SoundManager.button_click()
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
 
 func _on_settings_pressed() -> void:
+	SoundManager.button_click()
 	get_tree().change_scene_to_file("res://scenes/settings.tscn")
 
 func _on_exit_pressed() -> void:
+	SoundManager.button_click()
 	get_tree().quit()

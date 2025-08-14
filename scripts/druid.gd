@@ -5,29 +5,41 @@ extends CharacterMove
 @export var hasWallJump := false
 @export var wallKickback := 3
 
-var doubleJumpReady := 2 # tracker for jumps
+var doubleJumpReady := true # tracker for jumps
+
+
+func _jump():
+	velocity.y = -sqrt(2 * get_gravity().y * jump_height)
+	SoundManager.jump()
+
+
+func _double_jump():
+	if hasDoubleJump and doubleJumpReady:
+		_jump()
+		doubleJumpReady = false
+
+
+func _wall_jump():
+	if hasWallJump and is_on_wall():
+		_jump()
+		doubleJumpReady = false # removes extra jumps when wall jumping
+		
+		#wall kickback
+		if velocity.x < 0:
+			velocity.x = move_speed * wallKickback
+		else:
+			velocity.x = -(move_speed) * wallKickback
+
 
 func _vertical_input():
-	if hasWallJump:
-		if is_on_wall():
-			doubleJumpReady = doubleJumpReady + 1 if doubleJumpReady < 2 else 2
-			if Input.is_action_just_pressed("jump") and (doubleJumpReady > 0):
-				velocity.y = -jump_height
-				doubleJumpReady -= 1
-				if velocity.x < 0:
-					velocity.x = move_speed * wallKickback
-				else:
-					velocity.x = -(move_speed) * wallKickback
-	
-	if hasDoubleJump:
+	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			doubleJumpReady = 2
-		if Input.is_action_just_pressed("jump") and (doubleJumpReady > 0):
-			velocity.y = -sqrt(2 * get_gravity().y * jump_height)
-			doubleJumpReady -= 1
-	else:
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = -sqrt(2 * get_gravity().y * jump_height)
+			_jump()
+			doubleJumpReady = true # resets count on floor
+		elif is_on_wall():
+			_wall_jump()
+		else:
+			_double_jump()
 
 
 func _idle_ani():
