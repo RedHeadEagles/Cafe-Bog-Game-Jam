@@ -90,8 +90,6 @@ animations = [{
 
 [node name="Human" type="CharacterBody2D"]
 script = ExtResource("1_cwf78")
-hasDoubleJump = true
-hasWallJump = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
