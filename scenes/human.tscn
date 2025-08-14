@@ -1,30 +1,107 @@
-[gd_scene load_steps=5 format=3 uid="uid://31ggpxte7msq"]
+[gd_scene load_steps=13 format=3 uid="uid://31ggpxte7msq"]
 
-[ext_resource type="Script" uid="uid://cxqmt4wij70d0" path="res://scripts/move.gd" id="1_swaxu"]
+[ext_resource type="Script" uid="uid://5swlbjfctaon" path="res://scripts/druid.gd" id="1_cwf78"]
+[ext_resource type="Texture2D" uid="uid://d0ivrlyja6po2" path="res://art/DRUID Sprite.png" id="2_cwf78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5m4"]
-size = Vector2(64, 64)
+size = Vector2(16, 31)
 
-[sub_resource type="Gradient" id="Gradient_gv5m4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwf78"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(0, 32, 16, 32)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_f3sb7"]
-gradient = SubResource("Gradient_gv5m4")
-fill = 2
-fill_from = Vector2(0.519878, 0.498471)
-fill_to = Vector2(0.862385, 0.0672783)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4otcn"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mayv3"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(17, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_denma"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(34, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0vvy"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxdja"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(0, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqsuu"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(17, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brk74"]
+atlas = ExtResource("2_cwf78")
+region = Rect2(34, 96, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74uwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwf78")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4otcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mayv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_denma")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0vvy")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxdja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqsuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brk74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqsuu")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
 
 [node name="Human" type="CharacterBody2D"]
-script = ExtResource("1_swaxu")
+script = ExtResource("1_cwf78")
 hasDoubleJump = true
 hasWallJump = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_gv5m4")
 debug_color = Color(0, 0.594737, 0.729336, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_f3sb7")
+[node name="Druid" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_74uwr")
+animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
