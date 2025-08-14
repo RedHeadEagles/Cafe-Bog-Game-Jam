@@ -20,7 +20,7 @@ func _double_jump():
 
 
 func _wall_jump():
-	if hasWallJump and is_on_wall():
+	if hasWallJump:
 		_jump()
 		doubleJumpReady = false # removes extra jumps when wall jumping
 		
