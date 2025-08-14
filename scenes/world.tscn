@@ -161,4 +161,4 @@ position = Vector2(102, -21)
 fly = true
 interface = true
 move_enabled = false
-jump_height = 200
+jump_height = 35
