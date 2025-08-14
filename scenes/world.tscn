@@ -149,7 +149,7 @@ sources/0 = SubResource("TileSetAtlasSource_4wyf3")
 [node name="World" type="Node2D"]
 
 [node name="Human" parent="." instance=ExtResource("1_nnsk1")]
-position = Vector2(104, -42)
+position = Vector2(103, 9)
 collision_mask = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -157,7 +157,7 @@ tile_map_data = PackedByteArray("AAD9/wIAAAADAAMAAAAQAAIAAAAFAAMAAAAPAAIAAAAEAAM
 tile_set = SubResource("TileSet_k0juu")
 
 [node name="Bot" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(103, -88)
+position = Vector2(102, -21)
 fly = true
 interface = true
 move_enabled = false

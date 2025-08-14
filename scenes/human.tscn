@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ivrlyja6po2" path="res://art/DRUID Sprite.png" id="2_cwf78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv5m4"]
-size = Vector2(16, 31)
+size = Vector2(11, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwf78"]
 atlas = ExtResource("2_cwf78")
@@ -95,19 +95,18 @@ hasWallJump = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0.5)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_gv5m4")
 debug_color = Color(0, 0.594737, 0.729336, 0.42)
 
 [node name="Druid" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_74uwr")
-animation = &"jump"
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
-drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_horizontal_offset = 0.6
 

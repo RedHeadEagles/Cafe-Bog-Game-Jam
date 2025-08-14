@@ -4,19 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ckg04e7eev0p0" path="res://art/ANDROID Sprite.png" id="2_qpkb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwgxs"]
-size = Vector2(14, 23)
+size = Vector2(13, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ntuq6"]
 atlas = ExtResource("2_qpkb6")
 region = Rect2(0, 39, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bf32g"]
-atlas = ExtResource("2_qpkb6")
-region = Rect2(0, 71, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_px7s3"]
-atlas = ExtResource("2_qpkb6")
-region = Rect2(16, 71, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhacj"]
 atlas = ExtResource("2_qpkb6")
@@ -30,6 +22,14 @@ region = Rect2(16, 7, 16, 24)
 atlas = ExtResource("2_qpkb6")
 region = Rect2(32, 7, 16, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf32g"]
+atlas = ExtResource("2_qpkb6")
+region = Rect2(0, 71, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px7s3"]
+atlas = ExtResource("2_qpkb6")
+region = Rect2(16, 71, 16, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vjusx"]
 animations = [{
 "frames": [{
@@ -38,17 +38,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"fly",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bf32g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_px7s3")
-}],
-"loop": true,
-"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -62,6 +51,17 @@ animations = [{
 "texture": SubResource("AtlasTexture_u8vap")
 }],
 "loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf32g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px7s3")
+}],
+"loop": true,
 "name": &"move",
 "speed": 5.0
 }]
@@ -69,18 +69,19 @@ animations = [{
 [node name="Bot" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_cwism")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0.5)
+position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_rwgxs")
 
 [node name="Android" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vjusx")
 animation = &"idle"
-frame_progress = 0.0310577
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
 [connection signal="switch" from="." to="." method="_on_switch"]
