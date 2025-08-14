@@ -3,12 +3,13 @@ extends CharacterMove
 @export var fly = false
 @export var interface = false
 
+func _up():
+	velocity.y = -sqrt(2 * get_gravity().y * jump_height)
+
 func _vertical_input():
 	if Input.is_action_pressed("jump"):
-		if fly:
-			velocity.y = -sqrt(2 * get_gravity().y * jump_height)
-		elif is_on_floor():
-			velocity.y = -sqrt(2 * get_gravity().y * jump_height)
+		if is_on_floor() or fly:
+			_up()
 
 func _idle_ani():
 	$Android.play("idle")
