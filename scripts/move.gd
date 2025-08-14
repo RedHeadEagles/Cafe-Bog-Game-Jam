@@ -1,6 +1,11 @@
 class_name CharacterMove
 extends CharacterBody2D
 
+signal switch
+
+# whether or not character can move
+@export var move_enabled = true
+
 # how fast the player is
 @export var move_speed := 400
 @export var jump_speed := 600
@@ -46,10 +51,15 @@ func _vertical_input() -> void:
 		velocity.y = -jump_speed
 
 
-# gets horizontal and vertical inputs for velocity
+# gets horizontal and vertical inputs for velocity if movement is enabled
 func _user_input() -> void:
-	_horizontal_input()
-	_vertical_input()
+	if Input.is_action_just_pressed("switch"):
+		move_enabled = false if move_enabled else true # alternates between true and false
+		switch.emit()
+	
+	if move_enabled:
+		_horizontal_input()
+		_vertical_input()
 
 
 # what it looks like with no character movement

@@ -110,3 +110,5 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_horizontal_offset = 0.6
+
+[connection signal="switch" from="." to="." method="_on_switch"]

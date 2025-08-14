@@ -158,3 +158,6 @@ tile_set = SubResource("TileSet_k0juu")
 
 [node name="Bot" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(103, -88)
+fly = true
+interface = true
+move_enabled = false

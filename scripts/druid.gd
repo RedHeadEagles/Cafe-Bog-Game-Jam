@@ -48,3 +48,7 @@ func _vertical_move_ani(flip):
 	
 	# facing left or right
 	$Druid.flip_h = flip
+
+
+func _on_switch() -> void:
+	$Camera2D.enabled = move_enabled

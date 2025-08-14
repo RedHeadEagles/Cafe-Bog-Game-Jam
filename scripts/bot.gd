@@ -1,5 +1,8 @@
 extends CharacterMove
 
+@export var fly = false
+@export var interface = false
+
 func _idle_ani():
 	$Android.play("idle")
 
@@ -10,3 +13,7 @@ func _horizontal_move_ani(flip):
 func _vertical_move_ani(flip):
 	$Android.play("fly")
 	$Android.flip_h = flip
+
+
+func _on_switch() -> void:
+	$Camera2D.enabled = move_enabled
