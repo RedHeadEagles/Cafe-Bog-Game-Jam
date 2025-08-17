@@ -83,7 +83,6 @@ animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 enabled = false
-zoom = Vector2(2.2, 2.2)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 
